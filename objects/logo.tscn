@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://q7ytt5mw7sa"]
+
+[ext_resource type="Script" path="res://objects/logoCollision.gd" id="1_rncu8"]
+[ext_resource type="Texture2D" uid="uid://ddejf2ei57wlw" path="res://icon.svg" id="2_4587o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2417a"]
+size = Vector2(120, 122)
+
+[node name="Logo" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2417a")
+script = ExtResource("1_rncu8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_4587o")

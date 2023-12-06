@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2tfalpcpynmp"]
+
+[ext_resource type="Texture2D" uid="uid://bgahoexa4wspo" path="res://graphics/objects/fan.png" id="1_6l68d"]
+[ext_resource type="Script" path="res://objects/Fan.gd" id="2_s6d1y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ey4o0"]
+radius = 73.171
+
+[node name="Fan" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ey4o0")
+
+[node name="Fan" type="Sprite2D" parent="."]
+position = Vector2(1, -8)
+texture = ExtResource("1_6l68d")
+script = ExtResource("2_s6d1y")
