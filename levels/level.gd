@@ -21,7 +21,7 @@ func _on_player_grenade_signal(pos,player_direction):
 	grenade.linear_velocity = player_direction * grenade.speed
 	$Projectiles.add_child(grenade)
 
-func _on_secret_passage_entrance_body_entered(body):
+func _on_secret_passage_entrance_body_entered(_body):
 	if PlayerEntered == 0:
 		PlayerEntered = 1
 	else:
