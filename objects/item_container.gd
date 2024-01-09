@@ -1,6 +1,8 @@
 extends StaticBody2D
+class_name ItemContainer
 
+func _ready():
+	print(self,' was created')
 
-# Called when the node enters the scene tree for the first time.
 func hit():
 	print('object')

@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name PlayerCharacter
 
 
 signal laser_signal(pos, player_direction)

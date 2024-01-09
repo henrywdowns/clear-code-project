@@ -21,6 +21,5 @@ func _on_body_entered(body):
 	if "hit" in body:
 		body.hit()
 
-
 func _on_timer_timeout():
 	queue_free()
