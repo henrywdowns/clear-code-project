@@ -361,21 +361,24 @@ position = Vector2(6238, 2859)
 rotation = 1.5708
 
 [node name="SimpleLight" parent="Ground" index="16" instance=ExtResource("14_4vd6w")]
-position = Vector2(-356, 218)
+position = Vector2(-1115, -286)
 
 [node name="SimpleLight2" parent="Ground" index="17" instance=ExtResource("14_4vd6w")]
-position = Vector2(1520, 218)
+position = Vector2(2263, -268)
 
 [node name="Gate" parent="." index="1" instance=ExtResource("2_toom6")]
 position = Vector2(1096, -1648)
 
+[node name="Player" parent="." index="3"]
+position = Vector2(1169, -770)
+
 [node name="Toilet" parent="." index="4" instance=ExtResource("17_hbj0e")]
-position = Vector2(3124, -483)
+position = Vector2(4414, -570)
 collision_layer = 1
 collision_mask = 1
 
 [node name="Box" parent="." index="5" instance=ExtResource("18_uqj03")]
-position = Vector2(1284, -476)
+position = Vector2(3748, 60)
 collision_layer = 1
 collision_mask = 1
 
