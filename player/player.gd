@@ -4,6 +4,7 @@ class_name PlayerCharacter
 
 signal laser_signal(pos, player_direction)
 signal grenade_signal(pos, player_direction)
+signal update_stats
 
 var can_laser: bool = true
 var can_grenade: bool = true
@@ -11,9 +12,6 @@ var can_grenade: bool = true
 @export var max_speed: int = 500
 var speed: int = max_speed
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -32,7 +30,8 @@ func _process(_delta):
 	look_at(get_global_mouse_position())
 
 	var player_direction = Vector2(get_global_mouse_position()-position).normalized()
-	if Input.is_action_just_pressed("primary action") and can_laser:
+	if Input.is_action_just_pressed("primary action") and can_laser and Globals.laser_ammo > 0:
+		Globals.laser_ammo -= 1
 		var laser_markers = $LaserStartPositions.get_children()
 		var selected_laser = laser_markers[randi() % laser_markers.size()]
 		var pos = selected_laser.global_position
@@ -41,7 +40,8 @@ func _process(_delta):
 		$"Laser Timer".start()
 		laser_signal.emit(pos, player_direction)
 	
-	if Input.is_action_just_pressed("secondary action") and can_grenade:
+	if Input.is_action_just_pressed("secondary action") and can_grenade and Globals.grenade_ammo > 0:
+		Globals.grenade_ammo -= 1
 		var pos_marker = $LaserStartPositions.get_children()[0]
 		var pos = pos_marker.global_position
 		
@@ -58,3 +58,10 @@ func _on_laser_timer_timeout():
 func _on_grenade_timer_timeout():
 	can_grenade = true # Replace with function body.
 	print("Grenade Timer Timeout")
+
+func add_item(type: String) -> void:
+	if type == 'laser':
+		Globals.laser_ammo += 5
+	if type == 'grenade':
+		Globals.grenade_ammo += 1
+	update_stats.emit()

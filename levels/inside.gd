@@ -5,7 +5,7 @@ var PlayerEntered: int = 0
 func _on_exit_gate_area_body_entered(_body):
 	var tween = create_tween()
 	tween.tween_property($Player,"speed",0,.25)
-	get_tree().change_scene_to_file("res://levels/outside.tscn")
+	TransitionLayer.change_scene("res://levels/outside.tscn")
 	
 
 func _on_secret_passage_entrance_body_entered(_body):
