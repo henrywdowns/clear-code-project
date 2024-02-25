@@ -4,7 +4,6 @@ class_name PlayerCharacter
 
 signal laser_signal(pos, player_direction)
 signal grenade_signal(pos, player_direction)
-signal update_stats
 
 var can_laser: bool = true
 var can_grenade: bool = true
@@ -58,10 +57,3 @@ func _on_laser_timer_timeout():
 func _on_grenade_timer_timeout():
 	can_grenade = true # Replace with function body.
 	print("Grenade Timer Timeout")
-
-func add_item(type: String) -> void:
-	if type == 'laser':
-		Globals.laser_ammo += 5
-	if type == 'grenade':
-		Globals.grenade_ammo += 1
-	update_stats.emit()

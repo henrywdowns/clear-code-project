@@ -1,8 +1,11 @@
 extends StaticBody2D
 class_name ItemContainer
 
-func _ready():
-	print(self,' was created')
+signal open(pos, direction)
+
+@onready var current_direction: Vector2 = Vector2.DOWN.rotated(rotation)
 
 func hit():
-	print('object')
+	$LidSprite.hide()
+	var pos = $SpawnPositions.get_child(randi()%$SpawnPositions.get_child_count()).global_position
+	open.emit(pos, current_direction)

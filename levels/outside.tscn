@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c22bdpssuje3s"]
+[gd_scene load_steps=34 format=3 uid="uid://c22bdpssuje3s"]
 
 [ext_resource type="PackedScene" uid="uid://coiec6c7amosy" path="res://level.tscn" id="1_both7"]
 [ext_resource type="Script" path="res://levels/outside.gd" id="2_opa72"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cjf3m0kohcqb2" path="res://objects/toilet.tscn" id="17_hbj0e"]
 [ext_resource type="PackedScene" uid="uid://cw1nh50gegfhs" path="res://objects/box.tscn" id="18_uqj03"]
 [ext_resource type="PackedScene" uid="uid://cxyljftlvlpp5" path="res://objects/item.tscn" id="19_ykylg"]
+[ext_resource type="PackedScene" uid="uid://c5d262q6t4w0l" path="res://objects/crate.tscn" id="20_341vr"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7fukn"]
 
@@ -369,7 +370,7 @@ position = Vector2(1096, -1648)
 position = Vector2(1169, -770)
 
 [node name="Toilet" parent="." index="4" instance=ExtResource("17_hbj0e")]
-position = Vector2(4414, -570)
+position = Vector2(205, -655)
 collision_layer = 1
 collision_mask = 1
 
@@ -378,8 +379,26 @@ position = Vector2(3748, 60)
 collision_layer = 1
 collision_mask = 1
 
-[node name="Item" parent="." index="7" instance=ExtResource("19_ykylg")]
+[node name="Item6" parent="." index="7" instance=ExtResource("19_ykylg")]
+position = Vector2(1385, -516)
+
+[node name="Item5" parent="." index="8" instance=ExtResource("19_ykylg")]
+position = Vector2(1707, -681)
+
+[node name="Item4" parent="." index="9" instance=ExtResource("19_ykylg")]
+position = Vector2(1419, -358)
+
+[node name="Item3" parent="." index="10" instance=ExtResource("19_ykylg")]
+position = Vector2(1578, -448)
+
+[node name="Item2" parent="." index="11" instance=ExtResource("19_ykylg")]
+position = Vector2(1741, -523)
+
+[node name="Item" parent="." index="12" instance=ExtResource("19_ykylg")]
 position = Vector2(1544, -600)
+
+[node name="Crate" parent="." index="13" instance=ExtResource("20_341vr")]
+position = Vector2(-260, -464)
 
 [connection signal="player_entered" from="Ground/SmallHouse" to="." method="_on_small_house_player_entered"]
 [connection signal="player_exited" from="Ground/SmallHouse" to="." method="_on_small_house_player_exited"]

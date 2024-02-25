@@ -19,4 +19,3 @@ position = Vector2(455, 536)
 
 [connection signal="grenade_signal" from="Player" to="." method="_on_player_grenade_signal"]
 [connection signal="laser_signal" from="Player" to="." method="_on_player_laser_signal"]
-[connection signal="update_stats" from="Player" to="." method="_on_player_update_stats"]
